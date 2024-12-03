@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/nnniwe/ego_ws/devel/include/**",
+        "/home/nnniwe/rtabmap_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/bspline_opt/include/**",
+        "/home/nnniwe/VINS_Fusion/src/VINS_Fusion/camera_models/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/plan_manage/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/mpc_controller/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/patchwork/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/path_searching/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/plan_env/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_conversions/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_costmap_plugins/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_odom/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_rviz_plugins/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_slam/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_sync/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_util/include/**",
+        "/home/nnniwe/rtabmap_ws/src/rtabmap_ros/rtabmap_viz/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/ego-planner/planner/traj_utils/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/autonomous_exploration_development_environment/src/velodyne_simulator/velodyne_gazebo_plugins/include/**",
+        "/home/nnniwe/ego_ws/src/ego-planner-for-ground-robot/autonomous_exploration_development_environment/src/waypoint_rviz_plugin/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

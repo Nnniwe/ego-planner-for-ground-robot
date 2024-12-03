@@ -53,7 +53,7 @@ void GridMap::initMap(ros::NodeHandle &nh)
   node_.param("grid_map/map_type", mp_.map_type_, 3);
   ROS_INFO("map usage : %d",mp_.map_type_);
 
-  node_.param("grid_map/frame_id", mp_.frame_id_, string("map"));
+  node_.param("grid_map/frame_id", mp_.frame_id_, string("world"));
   node_.param("grid_map/local_map_margin", mp_.local_map_margin_, 1);
   node_.param("grid_map/ground_height", mp_.ground_height_, 1.0);
 
