@@ -246,7 +246,7 @@ Visualization Manager:
   Global Options:
     Background Color: 0; 0; 0
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -286,7 +286,7 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.009999999776482582
       Pitch: 1.5697963237762451
-      Target Frame: map
+      Target Frame: world
       Yaw: 3.155449867248535
     Saved:
       - Class: rviz/ThirdPersonFollower

@@ -1402,7 +1402,7 @@ void GridMap::publTerrainHeight() {
 
 void GridMap::publishMap2D() {
     nav_msgs::OccupancyGrid map_2d;
-    map_2d.header.frame_id = "map";
+    map_2d.header.frame_id = "world";
     map_2d.info.resolution = mp_.resolution_;
     map_2d.info.width = md_.local_bound_max_(0)-md_.local_bound_min_(0);
     map_2d.info.height = md_.local_bound_max_(1)-md_.local_bound_min_(1);

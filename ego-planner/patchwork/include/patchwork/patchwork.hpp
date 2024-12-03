@@ -109,7 +109,7 @@ public:
         num_rings_of_interest_ = elevation_thr_.size();
 
         node_handle_.param("/patchwork/visualize", visualize_, true);
-        poly_list_.header.frame_id = "/map";
+        poly_list_.header.frame_id = "/world";
         poly_list_.polygons.reserve(130000);
 
         revert_pc.reserve(NUM_HEURISTIC_MAX_PTS_IN_PATCH);
@@ -493,11 +493,11 @@ void PatchWork<PointT>::estimate_ground(
         sensor_msgs::PointCloud2 cloud_ROS;
         pcl::toROSMsg(revert_pc, cloud_ROS);
         cloud_ROS.header.stamp    = ros::Time::now();
-        cloud_ROS.header.frame_id = "/map";
+        cloud_ROS.header.frame_id = "/world";
         revert_pc_pub.publish(cloud_ROS);
         pcl::toROSMsg(reject_pc, cloud_ROS);
         cloud_ROS.header.stamp    = ros::Time::now();
-        cloud_ROS.header.frame_id = "/map";
+        cloud_ROS.header.frame_id = "/world";
         reject_pc_pub.publish(cloud_ROS);
     }
     PlaneViz.publish(poly_list_);

@@ -40,7 +40,7 @@ void signal_callback_handler(int signum) {
 void pub_score(std::string mode, double measure) {
     static int                 SCALE = 5;
     visualization_msgs::Marker marker;
-    marker.header.frame_id                  = "map";
+    marker.header.frame_id                  = "world";
     marker.header.stamp                     = ros::Time();
     marker.ns                               = "my_namespace";
     marker.id                               = 0;
@@ -77,7 +77,7 @@ pcl::PointCloud<T> cloudmsg2cloud(sensor_msgs::PointCloud2 cloudmsg) {
 }
 
 template<typename T>
-sensor_msgs::PointCloud2 cloud2msg(pcl::PointCloud<T> cloud, std::string frame_id = "map") {
+sensor_msgs::PointCloud2 cloud2msg(pcl::PointCloud<T> cloud, std::string frame_id = "world") {
     sensor_msgs::PointCloud2 cloud_ROS;
     pcl::toROSMsg(cloud, cloud_ROS);
     cloud_ROS.header.frame_id = frame_id;
