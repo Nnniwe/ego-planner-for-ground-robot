@@ -5,10 +5,10 @@
   <arg name="map_size_z" value=" 3.0"/>
 
   <!-- topic of your odometry such as VIO or LIO -->
-  <arg name="odom_topic" value="/visual_slam/odom" />
+  <arg name="odom_topic" value="/vins_fusion/odometry" />
 
   <!-- main algorithm params -->
-  <include file="$(find ego_planner)/launch/advanced_param.xml">
+  <include file="$(find ego_planner)/launch/advanced_param_exp.xml">
 
     <arg name="map_size_x_" value="$(arg map_size_x)"/>
     <arg name="map_size_y_" value="$(arg map_size_y)"/>
@@ -18,21 +18,22 @@
     <!-- camera pose: transform of camera frame in the world frame -->
     <!-- depth topic: depth image, 640x480 by default -->
     <!-- don't set cloud_topic if you already set these ones! -->
-    <arg name="camera_pose_topic" value="/pcl_render_node/camera_pose"/>
-    <arg name="depth_topic" value="/pcl_render_node/depth"/>
+    <arg name="camera_pose_topic" value="nouse1">
+    <arg name="depth_topic" value="/camera/depth/image_rect_raw"/>
 
     <!-- topic of point cloud measurement, such as from LIDAR  -->
     <!-- don't set camera pose and depth, if you already set this one! -->
-    <arg name="cloud_topic" value="/pcl_render_node/cloud"/>
+    <arg name="cloud_topic" value="nouse2"/>
+    <arg name="goal_topic" value="/move_base_simple/goal"/>
 
     <!-- intrinsic params of the depth camera -->
-    <arg name="cx" value="321.04638671875"/>
-    <arg name="cy" value="243.44969177246094"/>
-    <arg name="fx" value="387.229248046875"/>
-    <arg name="fy" value="387.229248046875"/>
+    <arg name="cx" value="325.69384765625"/>
+    <arg name="cy" value="232.660400390625"/>
+    <arg name="fx" value="381.4533996582031"/>
+    <arg name="fy" value="381.4533996582031"/>
 
     <!-- maximum velocity and acceleration the drone will reach -->
-    <arg name="max_vel" value="2.0" />
+    <arg name="max_vel" value="0.5" />
     <arg name="max_acc" value="3.0" />
 
     <!--always set to 1.5 times grater than sensing horizen-->
@@ -40,7 +41,7 @@
 
     <!-- 1: use 2D Nav Goal to select goal  -->
     <!-- 2: use global waypoints below  -->
-    <arg name="flight_type" value="2" />
+    <arg name="flight_type" value="1" />
     
     <!-- global waypoints -->
     <!-- It generates a piecewise min-snap traj passing all waypoints -->
