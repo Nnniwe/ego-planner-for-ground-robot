@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle n("mpc_test");
     ros::Rate loop_rate(500);
 
-    start_point.header.frame_id = "/map";
+    start_point.header.frame_id = "/world";
 //    start_point.point.x = 1.98;
 //    start_point.point.y = 0.472;
     start_point.point.x = 68.2612*resolution+x_offset;
@@ -67,9 +67,9 @@ int main(int argc, char** argv) {
     B_spline_trajectory.setUniformBspline(control_points,3,ts);
     B_spline_trajectory.getTimeSpan(t,tmp);
 
-    b_spline_trajectory.header.frame_id = "map";
-    trajectory_predict.header.frame_id = "map";
-    predict_end_point.header.frame_id = "map";
+    b_spline_trajectory.header.frame_id = "world";
+    trajectory_predict.header.frame_id = "world";
+    predict_end_point.header.frame_id = "world";
 
     for(double t_c=t;t_c<tmp;t_c+=t_step)
     {
@@ -77,7 +77,7 @@ int main(int argc, char** argv) {
         geometry_msgs::PoseStamped current_pose;
         current_pose.pose.position.x = point_temp(0)*resolution+x_offset;
         current_pose.pose.position.y = point_temp(1)*resolution+y_offset;
-        current_pose.header.frame_id = "/map";
+        current_pose.header.frame_id = "/world";
         b_spline_trajectory.poses.push_back(current_pose);
     }
 

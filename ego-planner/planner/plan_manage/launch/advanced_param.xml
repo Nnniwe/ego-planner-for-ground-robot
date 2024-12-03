@@ -109,7 +109,7 @@
     <param name="grid_map/show_occ_time"  value="false"/>
     <param name="grid_map/pose_type"     value="2"/>
     <param name="grid_map/map_type"     value="1"/>
-    <param name="grid_map/frame_id"      value="map"/>
+    <param name="grid_map/frame_id"      value="world"/>
 
   <!-- planner manager -->
     <param name="manager/max_vel" value="$(arg max_vel)" type="double"/>
